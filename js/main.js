@@ -13,5 +13,16 @@ var renderVideoList = function () {
   }
 };
 
-renderVideoList();
+$('#new-video').on('submit', function() {
+  event.preventDefault();
+  var formTitle = document.forms["new-video"]["video_title"].value;
+  var formID = document.forms["new-video"]["id"].value;
+  var formVideo = {title: formTitle, youtubeId: formID};
+  videos.push(formVideo);
+  var newItemHtml = $.render(itemTemplate, formVideo);
+  $('#video-list').append(newItemHtml);
+  this.reset();
 
+});
+
+renderVideoList();

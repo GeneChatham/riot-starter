@@ -10,12 +10,16 @@
 
 <form id="new-video">
   <!-- TODO: 2 inputs, 1 button -->
+  Add a new video to the library: <br>
+  Video Title: <input type="text" name="video_title"><br>
+  YouTube ID: <input type="text" name="id"><br>
+  <input type="submit" value="SUBMIT!">
 </form>
 
 
 <div id="templates">
   <script class="video-list-item" type="text/template">
-    <h3>{ title }</h3>
+    <a href="http://www.youtube.com/watch?v={youtubeId}"><h3>{ title }</h3></a>
   </script>
 </div>
 
