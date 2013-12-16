@@ -8,6 +8,8 @@ var videos = [
 
 var itemTemplate = $('#templates .video-list-item').html();
 var genreTemplate = $('#templates .genre-count').html();
+var embeddedTemplate = $('#templates .video-embed').html();
+
 
 var genres = ['spoof', 'creepy']
 var stats = {};
@@ -42,6 +44,7 @@ var renderVideoList = function () {
   }
 };
 
+
 $('#new-video').on('submit', function() {
   event.preventDefault();
   var formTitle = document.forms["new-video"]["video_title"].value;
@@ -56,5 +59,23 @@ $('#new-video').on('submit', function() {
 
 });
 
+
+
 renderVideoList();
 renderGenreStats();
+
+
+
+
+$('a').click(function(e) {
+  e.preventDefault();
+  console.log("click captured")
+  var youtubeId = $(e.currentTarget).data('youtube-id');
+  console.log("Clicked on YouTube video:", youtubeId);
+  var newVideoEmbedHtml = $.render(embeddedTemplate, {youtubeId: youtubeId});
+  console.log(newVideoEmbedHtml);
+  $('#video-display').empty().append(newVideoEmbedHtml);
+});
+
+
+

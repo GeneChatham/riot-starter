@@ -21,12 +21,17 @@
 
 <div id="templates">
   <script class="video-list-item" type="text/template">
-    <a href="http://www.youtube.com/watch?v={youtubeId}"><h3>{ title }</h3></a>
+    <a href="http://www.youtube.com/watch?v={youtubeId}" data-youtube-id="{youtubeId}"><h3>{ title }</h3></a>
   </script>
 
   <script class="genre-count" type="text/template">
     <p>The { genre } genre has { count } videos.</p>
   </script>
+
+  <script class="video-embed" type="text/template">
+    <iframe width="420" height="315" src="http://www.youtube.com/embed/{youtubeId}" frameborder="0" allowfullscreen></iframe>
+  </script>
+
 </div>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
