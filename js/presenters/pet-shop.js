@@ -47,6 +47,13 @@
       comments: petComments,
       root: $petRoot.find('.comments')
     });
+
+    var petScore = new PetScorePresenter ({
+      likes: petComments.likes,
+      root: $petRoot.find('.total-like-count'),
+      comments: petComments
+    });
+
   };
 
 
